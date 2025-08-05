@@ -1,23 +1,27 @@
-import { Text, View, StyleSheet } from "react-native";
-import { useState } from "react";
+import { Text, View, StyleSheet, Image } from "react-native";
 import { router } from "expo-router"
 
 import { Button } from "@/components/button";
-import { Input } from "@/components/input";
-
 
 export default function Index() {
-  const [name, Setname] = useState<string>();
-
-  function handleNext() {
+  function handleLogin() {
     router.navigate("/login");
   }
-  
+  function handleRegister() {
+    router.navigate("/register")
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Olá, {name}</Text>
-      <Input onChangeText={Setname} />
-      <Button title="Continuar" onPress={handleNext} />
+      <Text style={styles.title}>Rebobina</Text>
+      <Image
+        source={require('@/images/logo-rebobina.png')}
+        style={styles.image}
+      />
+      <Text style={styles.subtitle}>Descomplique a Escolha</Text>
+      <Text style={styles.hero}>Crie listas com quem você gosta, compartilhe seus interesses, sorteie o próximo filme e aproveite juntos.</Text>
+      <Button title="Primeiro Acesso" onPress={handleRegister} />
+      <Button style={{ backgroundColor: "none" }} title="Já tenho uma conta" onPress={handleLogin} />
     </View>
   );
 }
@@ -27,10 +31,28 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 32,
     justifyContent: "center",
+    alignItems: "center",
     gap: 16,
+    backgroundColor: "#080808ff"
   },
   title: {
-    fontSize: 24,
-    fontWeight: "bold"
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#FFFFFF"
   },
+  subtitle: {
+    fontSize: 18,
+    
+    color: "#FFFFFF",
+  },
+  hero: {
+    fontSize: 14,
+    color: "#FFFFFF",
+    textAlign: "center",
+  },
+  image: {
+    alignSelf: 'center',
+    width: 400,
+    height: 400,
+  }
 })
