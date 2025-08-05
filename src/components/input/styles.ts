@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
         height: 52,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: "#121214",
         padding: 12,
-        fontSize: 16
-    }, 
+        fontSize: 16,
+        backgroundColor: "#222222",
+    },
 })
