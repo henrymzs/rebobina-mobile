@@ -9,5 +9,6 @@ export const styles = StyleSheet.create({
         padding: 12,
         fontSize: 16,
         backgroundColor: "#222222",
+        color: "#FFFFFF"
     },
 })

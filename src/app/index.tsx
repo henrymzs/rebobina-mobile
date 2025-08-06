@@ -2,6 +2,7 @@ import { Text, View, StyleSheet, Image } from "react-native";
 import { router } from "expo-router"
 
 import { Button } from "@/components/button";
+import colors from "@/constants/colors";
 
 export default function Index() {
   function handleLogin() {
@@ -13,7 +14,9 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Rebobina</Text>
+      <Text style={styles.logoText}>
+        <Text style={{ color: colors.orange }}>Reb</Text>obina
+      </Text>
       <Image
         source={require('@/images/logo-rebobina.png')}
         style={styles.image}
@@ -35,14 +38,13 @@ const styles = StyleSheet.create({
     gap: 16,
     backgroundColor: "#080808ff"
   },
-  title: {
+  logoText: {
     fontSize: 32,
     fontWeight: "bold",
     color: "#FFFFFF"
   },
   subtitle: {
     fontSize: 18,
-    
     color: "#FFFFFF",
   },
   hero: {
