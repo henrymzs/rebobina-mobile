@@ -70,6 +70,7 @@ export default function Register() {
                                         placeholderTextColor="#999"
                                         value={password}
                                         onChangeText={setPassword}
+                                        secureTextEntry
                                     />
                                 </View>
 
